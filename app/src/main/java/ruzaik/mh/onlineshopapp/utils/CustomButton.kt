@@ -3,11 +3,11 @@ package ruzaik.mh.onlineshopapp.utils
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.AppCompatButton
 
-class MSPTextViewBold (context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs) {
+class CustomButton(context: Context, attrs: AttributeSet) : AppCompatButton(context, attrs) {
+
     init {
-        // Call the function to apply the font to the components
         applyFont()
     }
 

@@ -10,23 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShopApp">
         <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:exported="true" />
+        <activity
             android:name=".activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:screenOrientation="portrait"
+            android:exported="true" />
     </application>
 
 </manifest>
