@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1071924503137",
+    "project_id": "onlineshopping-c171a",
+    "storage_bucket": "onlineshopping-c171a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071924503137:android:99f29e7aec361345038020",
+        "android_client_info": {
+          "package_name": "ruzaik.mh.onlineshopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071924503137-8cpmdi0231k6bqjbmp50c8kl1fjvbq5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ruzaik.mh.onlineshopapp",
+            "certificate_hash": "473702043ea719e0bae7e5e4c45c9a787e845060"
+          }
+        },
+        {
+          "client_id": "1071924503137-6a9bfucaf6prb69mero0cnavbp64qnqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz5fgIAloqXVaNAbxfll27xiCGdqW1zYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071924503137-6a9bfucaf6prb69mero0cnavbp64qnqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
