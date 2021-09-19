@@ -9,12 +9,12 @@ import android.view.WindowManager
 import android.widget.TextView
 import ruzaik.mh.onlineshopapp.R
 
-class LoginActivity : AppCompatActivity() {
-    lateinit var txt_register : TextView
+class RegisterActivity : AppCompatActivity() {
+    lateinit var txt_login : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_register)
 
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -26,11 +26,11 @@ class LoginActivity : AppCompatActivity() {
             )
         }
 
-        txt_register = findViewById(R.id.tv_register)
+        txt_login = findViewById(R.id.tv_login)
 
 
-        txt_register.setOnClickListener {
-            val intent  = Intent(this@LoginActivity, RegisterActivity::class.java)
+        txt_login.setOnClickListener {
+            intent = Intent(this@RegisterActivity, LoginActivity::class.java)
             startActivity(intent)
         }
     }
