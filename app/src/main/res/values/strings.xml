@@ -29,4 +29,8 @@
     <string name="err_msg_agree_terms_and_conditions">Please agree terms and conditions.</string>
     <string name="register_successful">Thanks for registering</string>
 
+    <string name="user_registered_firebase">You are registered successfully. Your user id is </string>
+
+    <string name="please_wait">Please Wait&#8230;</string>
+
 </resources>

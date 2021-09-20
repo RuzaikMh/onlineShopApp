@@ -11,18 +11,22 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import ruzaik.mh.onlineshopapp.R
 
 class RegisterActivity : BaseActivity() {
-    lateinit var txt_login : TextView
-    lateinit var toolbar : Toolbar
-    lateinit var firstName : TextView
-    lateinit var lastName : TextView
-    lateinit var emailID : TextView
-    lateinit var password : TextView
-    lateinit var confirmPassword : TextView
-    lateinit var termAndCondtions : CheckBox
-    lateinit var registerBtn : Button
+    private lateinit var txt_login : TextView
+    private lateinit var toolbar : Toolbar
+    private lateinit var firstName : TextView
+    private lateinit var lastName : TextView
+    private lateinit var emailID : TextView
+    private lateinit var password : TextView
+    private lateinit var confirmPassword : TextView
+    private lateinit var termAndCondtions : CheckBox
+    private lateinit var registerBtn : Button
 
 
 
@@ -58,7 +62,7 @@ class RegisterActivity : BaseActivity() {
         }
 
         registerBtn.setOnClickListener {
-            validateRegisterDetails()
+            registerUser()
         }
     }
 
@@ -116,9 +120,42 @@ class RegisterActivity : BaseActivity() {
             }
 
             else -> {
-                showErrorSnackBar(resources.getString(R.string.register_successful), false)
+                //showErrorSnackBar(resources.getString(R.string.register_successful), false)
                 true
             }
+        }
+    }
+
+    private fun registerUser() {
+
+        showProgressDialog(resources.getString(R.string.please_wait))
+
+        //check with validate function if the entries are valid or not.
+        if(validateRegisterDetails()) {
+
+            val emailTxt : String = emailID.text.toString().trim() { it <= ' '}
+            val passwordTxt : String = password.text.toString().trim() { it <= ' '}
+
+            //create an instance and create a register a user with email and password.
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(emailTxt, passwordTxt)
+                .addOnCompleteListener(this) { task ->
+
+                    hideProgressDialog()
+
+                    if (task.isSuccessful) {
+                        // Sign in success
+                        val firebaseUser : FirebaseUser = task.result!!.user!!
+
+                        showErrorSnackBar(
+                            resources.getString(R.string.user_registered_firebase) + firebaseUser.uid,
+                            false
+                        )
+
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        showErrorSnackBar(task.exception!!.message.toString(), true)
+                    }
+                }
         }
     }
 }
