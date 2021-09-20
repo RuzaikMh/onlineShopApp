@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShopApp">
         <activity
+            android:name=".activities.BaseActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.RegisterActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activities.LoginActivity"
             android:exported="true"
