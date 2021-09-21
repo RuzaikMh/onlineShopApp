@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -57,8 +59,7 @@ class RegisterActivity : BaseActivity() {
         setupActionBar()
 
         txt_login.setOnClickListener {
-            intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
         registerBtn.setOnClickListener {
@@ -150,6 +151,11 @@ class RegisterActivity : BaseActivity() {
                             resources.getString(R.string.user_registered_firebase) + firebaseUser.uid,
                             false
                         )
+
+                        FirebaseAuth.getInstance().signOut()
+                        Handler(Looper.getMainLooper()).postDelayed({
+                            finish()
+                        }, 1000)
 
                     } else {
                         // If sign in fails, display a message to the user.

@@ -6,6 +6,7 @@
     <string name="et_hint_email_id">Email ID</string>
     <string name="et_hint_password">Password</string>
     <string name="lbl_forgot_password">Forgot Password</string>
+    <string name="lbl_forgot_password_quz">Forgot Password?</string>
     <string name="btn_lbl_login">Login</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="register">Register</string>
@@ -28,9 +29,14 @@
     <string name="err_msg_password_and_confirm_password_mismatch">Password and confirm password does not match.</string>
     <string name="err_msg_agree_terms_and_conditions">Please agree terms and conditions.</string>
     <string name="register_successful">Thanks for registering</string>
+    <string name="login_successful">Your are logged in successfully</string>
 
     <string name="user_registered_firebase">You are registered successfully. Your user id is </string>
 
     <string name="please_wait">Please Wait&#8230;</string>
+
+    <string name="forgot_password_msg">Enter your username and email address\nwe\'ll send you a email to reset your\npassword</string>
+
+    <string name="submit">Submit</string>
 
 </resources>
